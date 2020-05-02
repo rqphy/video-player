@@ -1,2 +1,13 @@
 @import "vendors/reset.scss";
 @import "blocs/player.scss";
+
+:root {
+  --maincolor: #6958f6;
+  --background: #101010;
+  --maindark: #3f32a7;
+  --neutralwhite: #f6f6f6;
+  --neutralgrey: #cccccc;
+  --smallTextbody: 14px;
+  --opacitydark: #c1bbec;
+  --inputbg: #3b3b3b;
+}

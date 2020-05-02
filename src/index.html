@@ -3,10 +3,119 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Player JS</title>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Player | JS</title>
     <link rel="stylesheet" href="scss/styles.scss" />
   </head>
-  <body>
-    <h1>Let's do a player!</h1>
+  <body class="playerBody">
+    <div class="player">
+      <div class="player__controller controller">
+        <div class="controller__play icon">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="controller__pausing"
+            viewBox="0 0 24 24"
+            width="24"
+            height="24"
+          >
+            <path fill="none" d="M0 0h24v24H0z" />
+            <path
+              d="M6 5h2v14H6V5zm10 0h2v14h-2V5z"
+              fill="rgba(246,246,246,1)"
+            />
+          </svg>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="controller__playing visible"
+            viewBox="0 0 24 24"
+            width="24"
+            height="24"
+          >
+            <path fill="none" d="M0 0h24v24H0z" />
+            <path
+              d="M19.376 12.416L8.777 19.482A.5.5 0 0 1 8 19.066V4.934a.5.5 0 0 1 .777-.416l10.599 7.066a.5.5 0 0 1 0 .832z"
+              fill="rgba(246,246,246,1)"
+            />
+          </svg>
+        </div>
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          class="controller__backTen icon"
+          viewBox="0 0 24 24"
+          width="24"
+          height="24"
+        >
+          <path fill="none" d="M0 0h24v24H0z" />
+          <path
+            d="M12 10.667l9.223-6.149a.5.5 0 0 1 .777.416v14.132a.5.5 0 0 1-.777.416L12 13.333v5.733a.5.5 0 0 1-.777.416L.624 12.416a.5.5 0 0 1 0-.832l10.599-7.066a.5.5 0 0 1 .777.416v5.733z"
+            fill="rgba(246,246,246,1)"
+          />
+        </svg>
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          class="controller__forTen icon"
+          viewBox="0 0 24 24"
+          width="24"
+          height="24"
+        >
+          <path fill="none" d="M0 0h24v24H0z" />
+          <path
+            d="M12 13.333l-9.223 6.149A.5.5 0 0 1 2 19.066V4.934a.5.5 0 0 1 .777-.416L12 10.667V4.934a.5.5 0 0 1 .777-.416l10.599 7.066a.5.5 0 0 1 0 .832l-10.599 7.066a.5.5 0 0 1-.777-.416v-5.733z"
+            fill="rgba(246,246,246,1)"
+          />
+        </svg>
+        <h3 class="controller__currentTime">0:00</h3>
+        <div class="controller__timeBar">
+          <div class="controller__timeBackground"></div>
+          <div class="controller__progressBar"></div>
+          <div class="controller__bouboule"></div>
+        </div>
+        <h3 class="controller__totalTime">0:00</h3>
+        <div class="controller__volume">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="controller__sound icon"
+            viewBox="0 0 24 24"
+            width="24"
+            height="24"
+          >
+            <path fill="none" d="M0 0h24v24H0z" />
+            <path
+              d="M5.889 16H2a1 1 0 0 1-1-1V9a1 1 0 0 1 1-1h3.889l5.294-4.332a.5.5 0 0 1 .817.387v15.89a.5.5 0 0 1-.817.387L5.89 16zm13.517 4.134l-1.416-1.416A8.978 8.978 0 0 0 21 12a8.982 8.982 0 0 0-3.304-6.968l1.42-1.42A10.976 10.976 0 0 1 23 12c0 3.223-1.386 6.122-3.594 8.134zm-3.543-3.543l-1.422-1.422A3.993 3.993 0 0 0 16 12c0-1.43-.75-2.685-1.88-3.392l1.439-1.439A5.991 5.991 0 0 1 18 12c0 1.842-.83 3.49-2.137 4.591z"
+              fill="rgba(246,246,246,1)"
+            />
+          </svg>
+          <input
+            type="range"
+            min="0"
+            max="100"
+            orient="vertical"
+            class="controller__volumeBar"
+          />
+        </div>
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          class="controller__fullscreen icon"
+          viewBox="0 0 24 24"
+          width="24"
+          height="24"
+        >
+          <path fill="none" d="M0 0h24v24H0z" />
+          <path
+            d="M16 3h6v6h-2V5h-4V3zM2 3h6v2H4v4H2V3zm18 16v-4h2v6h-6v-2h4zM4 19h4v2H2v-6h2v4z"
+            fill="rgba(246,246,246,1)"
+          />
+        </svg>
+      </div>
+      <video class="player__video">
+        <source src="assets/blackrockamv.mp4" type="video/mp4" />
+      </video>
+    </div>
+    <script src="js/playerDisplay.js" type="text/javascript"></script>
+    <script src="js/playerFullScreen.js" type="text/javascript"></script>
+    <script src="js/playerPlay.js" type="text/javascript"></script>
+    <script src="js/playerProgressbar.js" type="text/javascript"></script>
+    <script src="js/playerTen.js" type="text/javascript"></script>
+    <script src="js/playerVolume.js" type="text/javascript"></script>
   </body>
 </html>
