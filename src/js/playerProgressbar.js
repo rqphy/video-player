@@ -7,11 +7,13 @@ const $controller = document.querySelector(".controller");
 // Time
 
 const $currentTime = document.querySelector(".controller__currentTime");
-const $totalTime = document.querySelector(".controller__totalTime");
 
 // $video.addEventListener('onload')
 
-$totalTime.innerHTML = formatTime($video.duration);
+$video.addEventListener("load", () => {
+  getTotalTime();
+  console.log("loaded");
+});
 
 $video.addEventListener("timeupdate", () => {
   const videoTime = ($video.currentTime / $video.duration) * 100;
@@ -21,6 +23,13 @@ $video.addEventListener("timeupdate", () => {
   $bouboule.style.left = `${videoTime}%`;
   $currentTime.innerHTML = formatTime($video.currentTime);
 });
+
+function getTotalTime() {
+  const $totalTime = document.querySelector("controller__totalTime");
+
+  $totalTime.textContent = formatTime($video.duration);
+  console.log("test");
+}
 
 // CurrentTime onClick
 
